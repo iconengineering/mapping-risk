@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Map Projections - ICON Engineering</title>
+
+		<meta name="description" content="Map Projections">
+		<meta name="author" content="Eben Dennis">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/mapping-risk.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="theme-font-merriweather theme-color-grey-blue" style="width: 100%; height: 100%;">
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 250px; height: auto;">
+                    <div style="z-index: 11; color: rgb(255, 153, 0);" class="sl-block-content">
+                        <h1>
+                            <span style="color:#FFFF00">MAPPING HAZARDS AND RISK</span>
+                        </h1>
+                    </div>
+                </div>
+                <div style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 471px;" data-block-type="text" class="sl-block">
+                    <div style="z-index: 12;" class="sl-block-content">
+                        <p>FEMA FLOOD MAPPING PROCESS</p>
+                    </div>
+                </div>
+                <div style="min-width: 30px; min-height: 30px; width: 471.9px; height: 39px; left: 0px; top: 0px;" data-block-type="image" class="sl-block">
+                    <div style="z-index: 14;" class="sl-block-content">
+                        <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865826/icon-logo-horizontal.png" data-natural-height="120" data-natural-width="1452" style=""/>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="sl-block" data-block-type="text" style="width: 693px; left: 0px; top: 49px; height: auto;">
+                    <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left;">
+                        <h2>
+           ICON Engineering, Inc.
+        </h2>
+                        <hr style="color:white;border-top:1px solid white">
+                        </div>
+                    </div>
+                    <div class="sl-block" data-block-type="text" style="width: 859px; left: 0px; top: 174px; height: auto;">
+                        <div dir="ui" class="sl-block-content" style="text-align: left; z-index: 12; font-size: 90%;">
+                            <ul>
+                                <li data-fragment-index="0" class="fragment">
+                                    <span style="color:#FFFF00">Stormwater and Floodplain Management Specialists</span>
+                                    <ul>
+                                        <li>Floodplain Modeling/Mapping</li>
+                                        <li>Hydrologic and Hydraulic Analysis</li>
+                                        <li>Master Plans, Stream Stabilization, Restoration and Water Quality</li>
+                                    </ul>
+                                </li>
+                                <li data-fragment-index="1" class="fragment">
+                                    <span style="color:#FFFF00">Locally Based (Centennial, CO)</span>
+                                    <ul>
+                                        <li>Colorado &amp; Front Range Clientele</li>
+                                        <li>Consultant to City of Boulder &amp; CU-Boulder</li>
+                                        <li>Very Active Since 2013 Floods</li>
+                                    </ul>
+                                </li>
+                                <li data-fragment-index="2" class="fragment">
+                                    <span style="color:#FFFF00">FEMA DFIRMs &amp; Letters of Map Revision (CLOMR/LOMR)</span>
+                                    <ul>
+                                        <li>FEMA/CWCB DFIRM Contractor</li>
+                                        <li>UDFCD LOMC’s - Over 400+ Cases Reviewed</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="sl-block" data-block-type="text" style="width: 693px; left: 0px; top: 49px; height: auto;">
+                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left;">
+                            <h2>
+           ICON Engineering, Inc.
+        </h2>
+                            <hr style="color:white;border-top:1px solid white">
+                            </div>
+                        </div>
+                        <div class="sl-block" data-block-type="text" style="width: 859px; left: 21px; top: 171px; height: auto;">
+                            <div dir="ui" class="sl-block-content" style="text-align: left; z-index: 12; font-size: 90%;">
+                                <p>
+                                    <span style="color:#FFFF00">Craig Jacobson, PE, CFM</span>
+                                </p>
+                                <ul>
+                                    <li>18 Years Consulting Experience</li>
+                                    <li>Hydrology and Hydraulics, Master Planning Manager</li>
+                                    <li>LOMR/CLOMR, MT2s, Modeling Preparation &amp; Review</li>
+                                    <li>Other
+	
+                                        <ul>
+                                            <li>Instructor:&nbsp; ASFPM Certified Floodplain Manager (CFM)</li>
+                                            <li>Instructor:&nbsp; UWRI FEMA Letters of Map Change Course</li>
+                                            <li>CASFM Organization:&nbsp;&nbsp; Outreach and Training Co-Chair</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <p>
+                                    <span style="color:#FFFF00">Eben Dennis</span>
+                                </p>
+                                <ul>
+                                    <li>GIS Coordinator</li>
+                                    <li>Web Mapping Developer</li>
+                                    <li>Nerd</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <div class="sl-block" data-block-type="text" style="width: 960px; left: 0px; top: 49px; height: auto;">
+                            <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: center;">
+                                <h2>National Flood Insurance Program</h2>
+                                <hr style="color:white;border-top:1px solid white">
+                                </div>
+                            </div>
+                            <div class="sl-block" data-block-type="text" style="width: 480px; left: 80px; top: 175px; height: auto;">
+                                <div dir="ui" class="sl-block-content" style="text-align: left; z-index: 12;">
+                                    <p>A voluntary program based on a mutual agreement between the Federal government and the local community.</p>
+                                </div>
+                            </div>
+                            <div style="height: auto; min-width: 30px; min-height: 30px; width: 480px; left: 80px; top: 365px;" data-block-type="text" class="sl-block">
+                                <div style="z-index: 13;" class="sl-block-content">
+                                    <p style="text-align: left;">In exchange for adopting and enforcing floodplain management regulations, Federally-backed flood insurance is made available to property owners throughout the community.</p>
+                                </div>
+                            </div>
+                            <div style="min-width: 30px; min-height: 30px; width: 360px; height: 307.5px; left: 586px; top: 231px;" data-block-type="image" class="sl-block">
+                                <div style="z-index: 14;" class="sl-block-content">
+                                    <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865872/nfip.png" data-natural-height="205" data-natural-width="240" style=""/>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <div class="sl-block" data-block-type="text" style="width: 568px; left: 7px; top: 49px; height: auto;">
+                                <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                    <h2>National Flood Insurance Program</h2>
+                                    <hr style="color:white;border-top:1px solid white">
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text" style="width: 466px; left: 0px; top: 164px; height: auto;">
+                                    <div data-fragment-index="0" dir="ui" class="sl-block-content fragment" style="text-align: left; z-index: 12; font-size: 80%;">
+                                        <p>
+                                            <span style="color:#FFFF00">1968 National Flood Insurance Act</span>
+                                        </p>
+                                        <ul>
+                                            <li>Transferred costs from the taxpayers to floodplain property owners</li>
+                                            <li>Provided financial aid</li>
+                                            <li>Guide development away from flood hazard areas</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div style="width: 593px; height: 255.446px; left: 184px; top: 433px;" data-block-type="image" class="sl-block">
+                                    <div data-fragment-index="2" style="z-index: 13;" class="sl-block-content fragment">
+                                        <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865886/nfip-participation.png" data-natural-height="252" data-natural-width="585" style=""/>
+                                    </div>
+                                </div>
+                                <div class="sl-block" data-block-type="text" style="width: 480px; left: 480px; top: 164px; height: auto;">
+                                    <div data-fragment-index="1" dir="ui" class="sl-block-content fragment" style="text-align: left; z-index: 14; font-size: 80%;">
+                                        <p>
+                                            <span style="color:#FFFF00">1973 Flood Disaster Protection Act</span>
+                                        </p>
+                                        <ul>
+                                            <li>More encouragement for participation!</li>
+                                            <li>Flood insurance required for federally-backed loans</li>
+                                            <li>Limited federal disaster assistance for communities without flood insurance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 177px; top: 381px;" data-block-type="text" class="sl-block">
+                                    <div data-fragment-index="2" style="z-index: 15; color: rgb(255, 255, 0);" class="sl-block-content fragment">
+                                        <p>NFIP Participation</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="sl-block" data-block-type="text" style="width: 566px; left: 7px; top: 49px; height: auto;">
+                                    <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                        <h2>National Flood Insurance Program</h2>
+                                        <hr style="color:white;border-top:1px solid white">
+                                        </div>
+                                    </div>
+                                    <div style="width: 480px; height: 298.723px; left: 480px; top: 207px;" data-block-type="image" class="sl-block">
+                                        <div data-fragment-index="1" style="z-index: 10;" class="sl-block-content fragment">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865902/nfip-policyholders.png" data-natural-height="468" data-natural-width="752" style=""/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="width: 453px; left: 15px; top: 350px; height: auto;">
+                                        <div data-fragment-index="1" dir="ui" class="sl-block-content fragment" style="text-align: left; z-index: 14; font-size: 80%;">
+                                            <p>
+                                                <span style="color:#FFFF00">Biggert-Waters Reform Act 2012 / Homeowners Flood Insurance Affordability Act 2014</span>
+                                            </p>
+                                            <ul>
+                                                <li>Reform ending subsidies for insurance</li>
+                                                <li>Mapping on a watershed basis</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="width: 466px; left: 15px; top: 176px; height: auto;">
+                                        <div data-fragment-index="0" dir="ui" class="sl-block-content fragment" style="text-align: left; z-index: 15; font-size: 80%;">
+                                            <p>
+                                                <span style="color:#FFFF00">1994 National Flood Insurance Reform Act</span>
+                                            </p>
+                                            <ul>
+                                                <li>Community Rating System (CRS)</li>
+                                                <li>Increased flood coverage maximum</li>
+                                                <li>Strengthened mandatory purchase</li>
+                                                <li>Mitigation Grant Program</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 564px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <span style="display:none">&nbsp;</span>National Flood Insurance Program
+                                                <span style="display:none">&nbsp;</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div style="height: auto; width: 240px; left: 0px; top: 140px;" data-block-type="text" class="sl-block">
+                                        <div data-fragment-index="0" style="z-index: 12; text-align: right; color: rgb(0, 255, 255);" class="sl-block-content fragment">
+                                            <p>MAPPING</p>
+                                        </div>
+                                    </div>
+                                    <div style="height: auto; width: 240px; left: 360px; top: 140px;" data-block-type="text" class="sl-block">
+                                        <div data-fragment-index="1" style="z-index: 13; color: rgb(0, 255, 255);" class="sl-block-content fragment">
+                                            <p>INSURANCE</p>
+                                        </div>
+                                    </div>
+                                    <div style="height: auto; width: 240px; left: 680px; top: 140px;" data-block-type="text" class="sl-block">
+                                        <div data-fragment-index="2" style="z-index: 14; text-align: left; color: rgb(0, 255, 255);" class="sl-block-content fragment">
+                                            <p>REGULATIONS</p>
+                                        </div>
+                                    </div>
+                                    <div style="width: 268.411px; height: 224px; left: 43px; top: 196px;" data-block-type="image" class="sl-block">
+                                        <div data-fragment-index="0" style="z-index: 15;" class="sl-block-content fragment">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865929/nfhl.png" data-natural-height="807" data-natural-width="967" style=""/>
+                                        </div>
+                                    </div>
+                                    <div style="width: 241.867px; height: 271px; left: 360px; top: 407px;" data-block-type="image" class="sl-block">
+                                        <div data-fragment-index="1" style="z-index: 16;" class="sl-block-content fragment">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865933/insurance.png" data-natural-height="400" data-natural-width="357" style=""/>
+                                        </div>
+                                    </div>
+                                    <div style="width: 224.762px; height: 224px; left: 672px; top: 196px;" data-block-type="image" class="sl-block">
+                                        <div data-fragment-index="2" style="z-index: 17;" class="sl-block-content fragment">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1865936/regulations.jpg" data-natural-height="294" data-natural-width="295" style=""/>
+                                        </div>
+                                    </div>
+                                    <div style="width: 165px; height: 188px; left: 177px; top: 420px;" data-block-type="shape" class="sl-block">
+                                        <div data-fragment-index="1" style="z-index: 18;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 0)" data-shape-type="symbol-thin-arrow-down-right" class="sl-block-content fragment">
+                                            <svg viewBox="4 4 24 24" preserveAspectRatio="xMidYMid" height="100%" width="100%" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g fill="rgb(255, 255, 0)" class="shape-element">
+                                                    <path d="M28 14c0-1.105-0.895-2-2-2s-2 0.895-2 2v7.172l-16.586-16.586c-0.781-0.781-2.047-0.781-2.828 0-0.391 0.391-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414l16.586 16.586h-7.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h14v-14z"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div style="width: 165px; height: 188px; left: 620px; top: 420px;" data-block-type="shape" class="sl-block">
+                                        <div data-fragment-index="2" style="z-index: 19;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 0)" data-shape-type="symbol-thin-arrow-up-right" class="sl-block-content fragment">
+                                            <svg viewBox="4 4 24 24" preserveAspectRatio="xMidYMid" height="100%" width="100%" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g fill="rgb(255, 255, 0)" class="shape-element">
+                                                    <path d="M26.001 4c-0 0-0.001 0-0.001 0h-11.999c-1.105 0-2 0.895-2 2s0.895 2 2 2h7.172l-16.586 16.586c-0.781 0.781-0.781 2.047 0 2.828 0.391 0.391 0.902 0.586 1.414 0.586s1.024-0.195 1.414-0.586l16.586-16.586v7.172c0 1.105 0.895 2 2 2s2-0.895 2-2v-14h-1.999z"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div style="width: 164px; height: 188px; left: 400px; top: 210px;" data-block-type="shape" class="sl-block">
+                                        <div data-fragment-index="2" style="z-index: 20;" data-shape-stretch="false" data-shape-fill-color="rgb(255, 255, 0)" data-shape-type="symbol-thin-arrow-left" class="sl-block-content fragment">
+                                            <svg viewBox="2 4 28 24" preserveAspectRatio="xMidYMid" height="100%" width="100%" version="1.1"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <g fill="rgb(255, 255, 0)" class="shape-element">
+                                                    <path d="M12.586 4.586l-10 10c-0.781 0.781-0.781 2.047 0 2.828l10 10c0.781 0.781 2.047 0.781 2.828 0s0.781-2.047 0-2.828l-6.586-6.586h19.172c1.105 0 2-0.895 2-2s-0.895-2-2-2h-19.172l6.586-6.586c0.39-0.391 0.586-0.902 0.586-1.414s-0.195-1.024-0.586-1.414c-0.781-0.781-2.047-0.781-2.828 0z"></path>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block intro-start" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 300px; left: 300px; top: 200px;">
+                                        <div class="sl-block-content" style="z-index: 21;"></div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Components of a Flood Insurance Study&nbsp;</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 510px; left: 40px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Flood Insurance Study Report (FIS)</span>
+                                            </p>
+                                            <ul style="color:rgb(255, 255, 255)">
+                                                <li>Discussion of Flooding History</li>
+                                                <li>Technical Analyses</li>
+                                                <li>Flood Discharges &amp; Frequencies</li>
+                                                <li>Flood Profiles</li>
+                                                <li>Mapping Information</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 349.495px; height: 452px; left: 575.505px; top: 210px;">
+                                        <div class="sl-block-content" style="z-index: 13;">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866160/Picture2.jpg" style="" data-natural-width="358" data-natural-height="463"/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 10; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Components of a Flood Insurance Study&nbsp;</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="width: 371px; height: 560.498px; left: 560px; top: 124px;">
+                                        <div class="sl-block-content" style="z-index: 11;">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866129/Picture1.png" style="" data-natural-width="464" data-natural-height="701"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 510px; left: 40px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Flood Insurance Rate Map (FIRM)</span>
+                                            </p>
+                                            <ul style="color:rgb(255, 255, 255)">
+                                                <li>Floodplain Inundation Limits</li>
+                                                <li>Flood Insurance Zones</li>
+                                                <li>Base Flood Elevations</li>
+                                                <li>Hydraulic Cross-sections</li>
+                                                <li>Mapping Information</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Floodplain Regulation&nbsp;</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 387px; left: 41px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Basis of Regulation</span>
+                                            </p>
+                                            <ul>
+                                                <li style="color: rgb(255, 255, 255); text-align: left;">1% annual chance flood&nbsp;</li>
+                                                <li style="color: rgb(255, 255, 255); text-align: left;">100-year event</li>
+                                                <li style="color: rgb(255, 255, 255); text-align: left;">Floodway
+	
+                                                    <ul>
+                                                        <li style="color: rgb(255, 255, 255); text-align: left;">Theoretical boundary</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 490px; height: 245.565px; left: 449px; top: 145.218px;">
+                                        <div class="sl-block-content" style="z-index: 13;">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866180/Picture3.png" style="" data-natural-width="868" data-natural-height="435"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 527px; left: 433px; top: 435px;">
+                                        <div class="sl-block-content" style="z-index: 14; text-align: left;">
+                                            <p>
+                                                <span style="font-size:0.7em">“...means the channel of a river or other watercourse and the adjacent land areas that must be reserved in order to discharge the base flood without cumulatively increasing the water surface elevation more than one foot {or stricter local standard}.”</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Floodplain Mapping Standards&nbsp;</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 259px; left: 41px; top: 140px;">
+                                        <div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0">
+                                            <p style="text-align:left">
+                                                <span style="color:#FFFF00">Topography</span>
+                                            </p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">Aerial Mapping</p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">LiDAR</p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">Survey</p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 268px; left: 326px; top: 140px;">
+                                        <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="1">
+                                            <p style="text-align:left">
+                                                <span style="color:#FFFF00">Hydrology</span>
+                                            </p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">The quantity of water that must pass a given point</p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 314px; left: 624px; top: 140px;">
+                                        <div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="2">
+                                            <p style="text-align:left">
+                                                <span style="color:#FFFF00">Hydraulics</span>
+                                            </p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">The configuration and “roughness” of the channel and adjacent overbank area that must carry that water</p>
+                                            <p style="color:rgb(255, 255, 255); text-align:left">&nbsp;</p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 420.111px; height: 247px; left: 27px; top: 411px;">
+                                        <div class="sl-block-content fragment" style="z-index: 15; border-width: 1px;" data-fragment-index="0">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866218/Topographic-Relief-perspective-sample.jpg" style="" data-natural-width="796" data-natural-height="468"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 326.065px; height: 247px; left: 552.468px; top: 411px;">
+                                        <div class="sl-block-content fragment" style="z-index: 16;" data-fragment-index="2">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866247/Picture4.png" style="" data-natural-width="532" data-natural-height="403"/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 940px; height: 650.843px; left: 10px; top: 29px;">
+                                        <a class="sl-block-content" style="z-index: 11;" href="http://iconengineering.github.io/douglas-changes/" target="_blank">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866263/douglas.JPG" style="" data-natural-width="985" data-natural-height="682"/>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 721.682px; height: 661px; left: 111.318px; top: 27px;">
+                                        <a class="sl-block-content" style="z-index: 11;" href="http://iconengineering.github.io/nfhl/" target="_blank">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866285/firm.JPG" style="" data-natural-width="666" data-natural-height="610"/>
+                                        </a>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Limitations</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 40px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Topography</span>
+                                            </p>
+                                            <ul style="color:rgb(255, 255, 255)">
+                                                <li>Age</li>
+                                                <li>Level of detail</li>
+                                                <li>Fixed in time</li>
+                                                <li>Erosion</li>
+                                                <li>Deposition</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 278.093px; left: 505px; top: 10px;">
+                                        <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866364/topo1.JPG" style="" data-natural-width="734" data-natural-height="567"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 360px; height: 301.385px; left: 505px; top: 375px;">
+                                        <div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="2">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866366/topo2JPG.JPG" data-natural-width="780" data-natural-height="653" style=""/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 103px; height: 236px; left: 640px; top: 216px;">
+                                        <div class="sl-block-content fragment" data-shape-type="arrow-down" data-shape-fill-color="rgb(255, 255, 0)" data-shape-stretch="false" style="z-index: 15;" data-fragment-index="1">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="xMidYMid" viewBox="0 0 103 103">
+                                                <polygon fill="rgb(255, 255, 0)" class="shape-element" points="51.5,103 103,51.5 72.1,51.5 72.1,0 30.9,0 30.9,51.5 0,51.5 51.5,103"></polygon>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Limitations</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 40px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Hydrology</span>
+                                            </p>
+                                            <ul style="color:rgb(255, 255, 255)">
+                                                <li>Design Assumptions</li>
+                                                <li>Rainfall Intensity</li>
+                                                <li>Storm Duration</li>
+                                                <li>Land Use Projections</li>
+                                                <li>Soil Moisture</li>
+                                                <li>Man-made features
+	
+                                                    <ul>
+                                                        <li>Dams</li>
+                                                        <li>Detention Ponds</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 514px; height: 381.375px; left: 418px; top: 179px;">
+                                        <div class="sl-block-content" style="z-index: 13;" href="">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866314/wwe.JPG" style="" data-natural-width="841" data-natural-height="624"/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 845.043px; height: 627px; left: 55px; top: 35px;">
+                                        <div class="sl-block-content" style="z-index: 11;">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866314/wwe.JPG" data-natural-width="841" data-natural-height="624" style=""/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Limitations</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 40px; top: 140px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p style="color:rgb(255, 255, 255); text-align:left">
+                                                <span style="color:rgb(255, 255, 0)">Hydraulics</span>
+                                            </p>
+                                            <ul style="color:rgb(255, 255, 255)">
+                                                <li>Vegetation&nbsp;</li>
+                                                <li>Aggregation</li>
+                                                <li>Degradation</li>
+                                                <li>Erosion</li>
+                                                <li>Debris</li>
+                                                <li>Man-made features
+	
+                                                    <ul>
+                                                        <li>Bridges/Culverts</li>
+                                                        <li>Flood debris</li>
+                                                        <li>Human response to flooding</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 433px; height: 324.75px; left: 480px; top: 26px;">
+                                        <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="0">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866411/DSCN3974.JPG" style="" data-natural-width="1200" data-natural-height="900"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 433px; height: 324.75px; left: 480px; top: 374.5px;">
+                                        <div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="1">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866413/DSCN3350.JPG" style="" data-natural-width="1200" data-natural-height="900"/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 909.556px; height: 417px; left: 32px; top: 134px;">
+                                        <a class="sl-block-content" style="z-index: 11;" href="http://iconengineering.github.io/twomile" target="_blank">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866344/twomile.JPG" style="" data-natural-width="1577" data-natural-height="723"/>
+                                        </a>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;">
+                                        <div class="sl-block-content" style="z-index: 12;">
+                                            <p>Text</p>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 910px; left: 32px; top: 121px;">
+                                        <div class="sl-block-content" style="z-index: 14; text-align: left; background-color: rgb(255, 255, 255);">
+                                            <p>
+                                                <span style="color:#000000">
+                                                    <span style="font-size:0.7em">City of Boulder - Twomile Canyon Creek</span>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 719px; left: 7px; top: 49px; height: auto;">
+                                        <div class="sl-block-content" style="z-index: 11; border-width: 1px; text-align: left; font-size: 60%;">
+                                            <h2>
+                                                <u>Next Steps........?</u>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 337.333px; height: 253px; left: 91.3333px; top: 155px;">
+                                        <div class="sl-block-content fragment" style="z-index: 12;" data-fragment-index="0">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866417/DSCN3365.JPG" style="" data-natural-width="1200" data-natural-height="900"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 330.667px; height: 248px; left: 503px; top: 158px;">
+                                        <div class="sl-block-content fragment" style="z-index: 13;" data-fragment-index="2">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866422/DSCN3389.JPG" style="" data-natural-width="1200" data-natural-height="900"/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 349px; height: 261.75px; left: 80px; top: 428.5px;">
+                                        <div class="sl-block-content fragment" style="z-index: 14;" data-fragment-index="1">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866424/DSCN2026.JPG" data-natural-width="1200" data-natural-height="900" style=""/>
+                                        </div>
+                                    </div>
+                                    <div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 332px; height: 249px; left: 502.5px; top: 431px;">
+                                        <div class="sl-block-content fragment" style="z-index: 15;" data-fragment-index="3">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1866429/DSCN2037.JPG" style="" data-natural-width="1200" data-natural-height="900"/>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section>
+                                    <div class="sl-block" data-block-type="text" style="width: 900px; left: 30px; top: 58px; height: auto;">
+                                        <div class="sl-block-content" style="font-size: 200%; text-align: left; z-index: 10;">
+                                            <h1>Questions?</h1>
+                                        </div>
+                                    </div>
+                                    <div style="min-width: 30px; min-height: 30px; width: 360px; height: 337.959px; left: 411px; top: 321px;" data-block-type="image" class="sl-block">
+                                        <div style="z-index: 12;" class="sl-block-content">
+                                            <img data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/321541/images/1827113/giphy-2.gif" data-natural-height="230" data-natural-width="245" style=""/>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: false,
+				center: false,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
